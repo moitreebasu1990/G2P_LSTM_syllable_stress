@@ -1,0 +1,14 @@
+**/.idea/
+**/__pycache__/
+**/*.pyc
+**/model_checkpoints/
+**/.DS_Store
+*.log
+*.txt
+
+*.npy
+
+*.dict
+data/celex/graphemeTable\.csv
+
+data/celex/phonemeTable\.csv
