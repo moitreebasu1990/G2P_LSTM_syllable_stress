@@ -12,3 +12,11 @@
 data/celex/graphemeTable\.csv
 
 data/celex/phonemeTable\.csv
+
+data/celex/En/sourceTable\.csv
+
+data/celex/En/targetTable\.csv
+
+data/celex/sourceTable\.csv
+
+data/celex/targetTable\.csv
