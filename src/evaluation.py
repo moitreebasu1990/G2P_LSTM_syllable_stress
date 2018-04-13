@@ -369,13 +369,8 @@ def create_Testdict(file):
 
 @app.route('/decode/<word>')
 def decode(word):
-    wordlist = word.split()
-    output = ""
-    for word in wordlist:
-        punc_regex = str.maketrans('', '', string.punctuation)
-        stripped_word = word.translate(punc_regex)
-        output += jsonify(str(decoded_word))
-    return(output)
+    decoded_word = decode_word(sess,model,word)
+    return jsonify(str(decoded_word))
 
 
 def serve():
