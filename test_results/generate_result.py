@@ -147,7 +147,7 @@ def main():
     fr0 = open("test_source.text","r", encoding='utf-8') #opens the input file
     fr1 = open("actual_target.text","r", encoding='utf-8') #opens the input file
     fr2 = open("test_target.text","r", encoding='utf-8') #opens the input file
-    fw = open("test_target.csv","w", encoding='utf-8') #opens the output file
+    fw = open("comparison_result.csv","w", encoding='utf-8') #opens the output file
     fw1 = open("result.text", "w", encoding='utf-8')
 
     sources = fr0.readlines()
@@ -196,13 +196,13 @@ def main():
             total_syllable += syllable_len
             total_stress_marks += stress_len
 
-            row.append(source)
-            row.append(actual)
-            row.append(output)
-            row.append(str(we))
-            row.append(str(word_error))
-            row.append(str(syllable_error))
-            row.append(str(stress_error))
+            row.append(source.strip("\n"))
+            row.append(actual.strip("\n"))
+            row.append(output.strip("\n"))
+            row.append(str(we).strip("\n"))
+            row.append(str(word_error).strip("\n"))
+            row.append(str(syllable_error).strip("\n"))
+            row.append(str(stress_error).strip("\n"))
 
             writer.writerow(row)
 
