@@ -4,6 +4,14 @@ import csv
 import os
 import numpy as np
 import requests as req
+import argparse
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--port", default=5000,
+                        help="Define the port for the server mode")
+
+args = parser.parse_args()
 
 def read_test_grapheme():
 	fr = open("test_source.text","r", encoding='utf-8') #opens the input file
@@ -15,7 +23,7 @@ def read_test_grapheme():
 	fw.close()
 
 def run_test_g2p(grapheme):
-	response = req.get("http://localhost:5000/decode/" + grapheme)
+	response = req.get("http://localhost:"+str(args.port)+"/decode/" + grapheme)
 	return (response.content.decode("utf-8").strip("\n")).strip('\"')
 
 if __name__ == "__main__":
